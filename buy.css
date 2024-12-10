@@ -1,0 +1,88 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #354F52;
+}
+
+.navlist {
+    list-style-type: none;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 40px;
+    font-family: "Metrophobic", sans-serif;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.navlogo {
+    color: white;
+    margin-left: 40px;
+    font-family: "Anton", sans-serif;
+}
+
+.hero-section {
+    width: 100%;
+    height: auto;
+    background-color: #CAD2C5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.hero-heading {
+    font-family: "Inter";
+    width: 100%;
+    text-align: center;
+}
+
+.heropara {
+    font-family: "Inter";
+    width: 100%;
+    text-align: center;
+}
+
+.threeSteps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    gap: 3%;
+}
+
+.step {
+    height: auto;
+    width: 30%;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.icondiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: lightblue;
+    opacity: 0.8;
+    color: rgb(0, 156, 213);
+}

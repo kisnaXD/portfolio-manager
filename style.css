@@ -1,0 +1,157 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #354F52;
+}
+
+.navlist {
+    list-style-type: none;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 40px;
+    font-family: "Metrophobic", sans-serif;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.navlogo {
+    color: white;
+    margin-left: 40px;
+    font-family: "Anton", sans-serif;
+}
+
+.hero-section {
+    width: 100%;
+    height: auto;
+    background-color: #CAD2C5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+#managing {
+    width: 100%;
+    font-family: "Metrophobic", sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+#managing span {
+    color: #2F3E46;
+    font-weight: 900;
+}
+
+.heropara {
+    font-size: 1.1rem;
+    font-family: "Inter";
+    text-align: center;
+    color: #2F3E46;
+    width: 100%;
+}
+
+.herobuttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 25px;
+}
+
+.manage {
+    font-size: 1.25rem;
+    color: white;
+    background-color: #52796F;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-family: "Inter";
+    cursor: pointer;
+}
+
+.learnMore {
+    background-color: transparent;
+    color: #52796F;
+    font-size: 1.25rem;
+    padding: 1rem;
+    border: 1.5px solid darkgray;
+    border-radius: 6px;
+    font-family: "Inter";
+    cursor: pointer;
+}
+
+.manage:hover {
+    background-color: #3F5D57;
+}
+
+.learnMore:hover {
+    border-color: black;
+    color: #3F5D57;
+}
+
+@keyframes scrollLeft {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+.scrolling-display {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2rem;
+    overflow: hidden;
+    position: relative;
+    border-top: 2px solid #00ff00;
+    border-bottom: 2px solid #00ff00;
+}
+
+.scrolling-text {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    animation: scrollLeft 6s linear infinite;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: black;
+    }
+
+    to {
+        border-color: transparent;
+    }
+}
