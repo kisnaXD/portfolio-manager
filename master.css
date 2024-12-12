@@ -1,0 +1,360 @@
+* {
+    border: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #354F52;
+}
+
+.navlist {
+    list-style-type: none;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 40px;
+    font-family: "Metrophobic", sans-serif;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.navlogo {
+    color: white;
+    margin-left: 40px;
+    font-family: "Anton", sans-serif;
+}
+
+.master-section {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #CAD2C5;
+    padding: 4rem 0;
+}
+
+.master-heading {
+    font-size: 2rem;
+    font-family: "Inter";
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.securities-heading { 
+    font-size: 2rem;
+    font-family: "Inter";
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    margin-top: 4rem;
+}
+
+.account-master {
+    background-color: white;
+    width: 82%;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: "Inter";
+    padding: 1rem 0 2rem 0;
+    gap: 20px;
+    max-height: 500px;
+    height: auto;
+    box-shadow: 0 8px 16px rgba(50, 77, 65, 0.4);
+    transition: all 0.2s ease;
+}
+
+.account-master:hover {
+    box-shadow: 0 8px 16px rgba(50, 77, 65, 0.6);
+    transform: translateY(-4px);
+}
+
+.securities-master {
+    background-color: white;
+    width: 82%;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: "Inter";
+    padding: 1rem 0 2rem 0;
+    gap: 20px;
+    max-height: 500px;
+    height: auto;
+    box-shadow: 0 8px 16px rgba(50, 77, 65, 0.4);
+    transition: all 0.2s ease;
+}
+
+.securities-master:hover {
+    box-shadow: 0 8px 16px rgba(50, 77, 65, 0.6);
+    transform: translateY(-4px);
+}
+
+.account-heading {
+    margin-left: 5%;
+    text-align: center;
+    font-size: 1.7rem;
+    width: 100%;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    gap: 20px;
+}
+
+.addAccount {
+    margin-right: 2.5%;
+}
+
+.addStock {
+    margin-right: 2.5%;
+}
+
+.topics {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.datarow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.datarow1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topic-code {
+    min-width: 10%;
+}
+
+.first-two {
+    font-size: 1.15rem;
+    display: flex;
+    width: 35%;
+    justify-content: flex-start;
+    gap: 50%;
+    margin: 0 0 0 5%;
+}
+
+.last-two {
+    font-size: 1.15rem;
+    display: flex;
+    width: 70%;
+    justify-content: flex-end;
+    gap: 10%;
+    margin: 0 8% 0 0;
+}
+
+.boldtext {
+    font-weight: bold;
+}
+
+.boldertext {
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: all 0.15s ease;
+}
+
+.boldertext:hover {
+    transform: scale(1.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Inter"
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.stkclose {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.divicon {
+    display: flex;
+    margin-top: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.stkclose:hover,
+.stkclose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-para {
+    margin-bottom: 4px;
+}
+
+.modal-heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-input {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    border: 2px solid darkgray;
+    text-align: left;
+}
+
+#error1, #error2 {
+    display: none;
+    color: red;
+    font-size: 0.85rem;
+}
+
+#error3, #error4 {
+    display: none;
+    color: red;
+    font-size: 0.85rem;
+}
+
+.submitButton {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#added {
+    display: none;
+    color: green;
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+#added1 {
+    display: none;
+    color: green;
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+.subm {
+    padding: 0.6rem 1rem;
+    font-size: 1.25rem;
+    font-family: "Inter";
+    background-color: #52796F;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subm:hover {
+    background-color: #3B594F;
+}
+
+.subm1 {
+    padding: 0.6rem 1rem;
+    font-size: 1.25rem;
+    font-family: "Inter";
+    background-color: #52796F;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subm1:hover {
+    background-color: #3B594F;
+}
+
+.form-section-minus {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-select {
+    padding: 0.5rem 0.9rem 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    width: auto;
+}

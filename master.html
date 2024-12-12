@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Buy Stocks</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Metrophobic&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="master.css" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h1 class="navlogo">Tully</h1>
+                <ul class="navlist">
+                    <li><a href='index.html'>Home</a></li>
+                    <li><a href='#'>Master</a></li>
+                    <li><a href='#'>Trade</a></li>
+                    <li><a href='#'>Manage</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="master-section">
+                <h1 class="master-heading">Account Master</h1>
+                <div class="account-master">
+                    <div class="buttons">
+                        <h2 class="account-heading">Your Accounts</h2>
+                        <i class="fa-solid fa-plus addAccount boldertext"></i>
+                    </div>
+                    <div class="topics">
+                        <div class="first-two">
+                            <p class="topic-code boldtext">Code</p>
+                            <p class="topic-name boldtext">Name</p>
+                        </div>
+                        <div class="last-two">
+                            <p class="topic-date boldtext">Date of Creation</p>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="securities-heading">Securities Master</h1>
+                <div class="securities-master">
+                    <div class="buttons">
+                        <h2 class="account-heading">Listed Securities</h2>
+                        <i class="fa-solid fa-plus addStock boldertext"></i>
+                    </div>
+                    <div class="topics">
+                        <div class="first-two">
+                            <p class="topic-code boldtext">Code</p>
+                            <p class="topic-name boldtext">Name</p>
+                        </div>
+                        <div class="last-two">
+                            <p class="topic-date boldtext">Date of Addition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="divicon">
+                    <h2 class="modal-heading">Account Creation</h2>
+                    <i class="fa-solid fa-xmark close"></i>
+                </div>
+                <div class="form-section">
+                    <div class="account-name">
+                        <p class="form-para">Name</p>
+                        <input id='account-n'type="text" class="form-input" placeholder="Enter Account Name">
+                        <p class="form-para" id="error1">Name cannot be empty</p>
+                    </div>
+                    <div class="account-code">
+                        <p class="form-para">Code</p>
+                        <input id="account-c" type="text" class="form-input" placeholder="Enter Account Code">
+                        <p class="form-para" id="error2">Code cannot be empty</p>
+                    </div>
+                </div>
+                <div class="submitButton">
+                    <p class="form-para" id="added">Account Added &#10003;</p>
+                    <button class="subm">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="myStockModal">
+            <div class="modal-content">
+                <div class="divicon">
+                    <h2 class="modal-heading">Securities Creation</h2>
+                    <i class="fa-solid fa-xmark stkclose"></i>
+                </div>
+                <div class="form-section">
+                    <div class="account-name">
+                        <p class="form-para">Name</p>
+                        <input id='stock-n'type="text" class="form-input" placeholder="Enter Stock Name">
+                        <p class="form-para" id="error3">Name cannot be empty</p>
+                    </div>
+                    <div class="account-code">
+                        <p class="form-para">Code</p>
+                        <input id="stock-c" type="text" class="form-input" placeholder="Enter Stock Code">
+                        <p class="form-para" id="error4">Code cannot be empty</p>
+                    </div>
+                </div>
+                <div class="submitButton">
+                    <p class="form-para" id="added1">Securities Added &#10003;</p>
+                    <button class="subm1">Add</button>
+                </div>
+            </div>
+        </div>
+        <script src="master.js"></script>
+    </body>
+</html>
