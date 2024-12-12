@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trade Stocks</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Metrophobic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="trade.css" />
+        <link rel="stylesheet" href="footerAndNavbar.css" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h1 class="navlogo">Tully</h1>
+                <ul class="navlist">
+                    <li><a href='index.html'>Home</a></li>
+                    <li><a href='#'>Master</a></li>
+                    <li><a href='#'>Trade</a></li>
+                    <li><a href='#'>Manage</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="trade-section">
+                <h1 class="trade-heading">Trade Stocks</h1>
+                <div class="buyAndSell">
+                    <div class="buySection">
+                        <div class="firstTwo">
+                            <div class="accountSection">
+                                <h2 class="accountList">Accounts</h2>
+                            </div>
+                            <div class="securitiesSection">
+                                <h2 class="securitiesList">Securities</h2>
+                            </div>
+                        </div>
+                        <h1 class="buy-order">Create Buy Order</h1>
+                        <div class="buyOrderFirst">
+                            <div class="accSel">
+                                <p class="accountSelect">Account</p>
+                                <select name="account-select" class="chooseAccount">
+                                    <option>None</option>
+                                </select>
+                            </div>
+                            <div class="stockSel">
+                                <p class="stockSelect">Stock Code</p>
+                                <select name="stock-select" class="chooseStock">
+                                    <option>None</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="buyOrderSecond">
+                            <div class="quantitySel">
+                                <p class="quantitySelect">Quantity</p>
+                                <input name="quantity-select" class="chooseQuantity" type='text' placeholder="Enter Quantity" />
+                            </div>
+                            <div class="priceSel">
+                                <p class="priceSelect">Price</p>
+                                <input name="price-select" class="choosePrice" type="text" placeholder="Enter Price" />
+                            </div>
+                            <div class="dateSel">
+                                <p class="dateSelect">Date</p>
+                                <p id="show-date"></p>
+                            </div>
+                        </div>
+                        <div class="buyOrderThird">
+                            <button class="addBuyOrderButton">Buy</button>
+                        </div>
+                    </div>
+                    <div class="sellSection">
+                        <div class="stocksSection"></div>
+                        <h1 class="sell-order">Create Sell Order</h1>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer2">
+                <img class="footer1" src="assets/mine.png" alt="footer" />
+                <h3>Developed By : Krishna Gera</h3>
+                <div>
+                    <span><i class="fa-solid fa-envelope"></i> krishnagera4@gmail.com</span>
+                    <span><i class="fa-brands fa-x-twitter"></i> KrishnaGera4</span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
