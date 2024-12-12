@@ -199,7 +199,6 @@ function refreshValues() {
             delete accountData[remover.id];
             const newVal = JSON.stringify(accountData);
             localStorage.setItem('account', newVal);
-            console.log(localStorage.getItem('account'));
             clearValues()
             refreshValues();
         });
@@ -239,14 +238,12 @@ function refreshStock() {
         stockMaster.append(rowE);
     }
     let arr = document.querySelectorAll('.removeStock')
-    console.log(arr);
     arr.forEach((remover) => {
         remover.addEventListener("click", function () {
             let stockData = JSON.parse(localStorage.getItem('stock'));
             delete stockData[remover.id];
             const newVal = JSON.stringify(stockData);
             localStorage.setItem('stock', newVal);
-            console.log(localStorage.getItem('stock'));
             clearStock()
             refreshStock();
         });
