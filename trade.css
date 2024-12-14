@@ -9,6 +9,71 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.modal-para {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "Inter";
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Inter";
+    align-items: center;
+    justify-content: center;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.successPara {
+    width: 100%;
+    text-align: center;
+    display: none;
+    color: green;
+}
+
+.failPara {
+    width: 100%;
+    text-align: center;
+    display: none;
+    color: red;
 }
 
 .trade-heading {
@@ -33,11 +98,12 @@
     flex-wrap: wrap;
     background-color: white;
     width: 47%;
-    height: 800px;
+    height: 900px;
     border-radius: 10px;
     border: none;
     box-shadow: 0 8px 16px rgba(50, 77, 65, 0.4);
     padding: 0;
+    row-gap: 0;
 }
 
 .firstTwo {
@@ -58,16 +124,244 @@
     border-radius: 10px;
 }
 
-.buyOrderFirst {
+.buyOrderFirst,.sellOrderFirst {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 12%;
+    gap: 0;
+}
+
+.sellOrderThird {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
 }
 
-.buyOrderSecond {
+.accSel, .stockSel {
+    width: 50%;
+    margin: 0;
+}
+
+.buyOrderSecond,.sellOrderSecond {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    padding-left: 12%;
+}
+
+.priceSel, .quantitySel {
+    width: 60%;
+}
+
+.dateSel {
+    width: 100%;
+    padding-left: 12%;
+}
+
+.securitiesSection {
+    width: 32.5%
+}
+
+.accountSection {
+    width: 60%;
+}
+
+
+.stocksSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.firstBox {
+    width: 87.5%;
+    background-color: rgba(225,234,227,0.85);
+    height: 400px;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.choose {
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #333; 
+    outline: none; 
+    width: 70%;
+    transition: border-color 0.3s ease; 
+    text-align: center;
+} 
+
+.form-para { 
+    margin-bottom: 2px; /* Adjust margin for the paragraph inside each selector */ 
+} 
+
+.form-input {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    width: 60%;
+    text-align: center;
+}
+
+#DateSelector, #sellDateSelector {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    text-align: center;
+    width: 80%;
+}
+
+.choose:hover { 
+    border-color: #888; 
+} 
+
+.choose:focus { 
+    border-color: #555; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.addBuyOrderButton {
+    padding: 0.75rem 1rem;
+    color: white;
+    border: none;
+    background-color: #00c244;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.addBuyOrderButton:hover {
+    background-color: #00a73a;
+}
+
+.sellOrderButton {
+    background-color: rgb(255, 0, 0);
+    padding: 0.75rem 1rem;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sellOrderButton:hover {
+    background-color: rgb(203, 0, 0);
+}
+
+.wrong-image {
+    background-image: url("assets/wrong.png");
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+}
+
+.divicon {
+    margin-top: 0;
+    width: 100%;
+    text-align: right;
+}
+
+#accountTable {
+    margin-top: 0.8rem;
+}
+
+.right {
+    text-align: right;
+}
+
+#accountTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+#positionsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+#securitiesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+#acc-thead th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+#acc-tbody td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+#sec-thead th {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+#sec-tbody td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    text-align: center
+}
+
+#pos-thead th {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+#pos-tbody td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+#pos-tbody tr { 
+    margin-top: 30px; /* Add margin to the table rows */ 
+}
+
+.center {
+    text-align: center;
+}
+
+
+.table-container {
+    max-height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#positionsTable th:nth-child(3), #positionsTable td:nth-child(3), #positionsTable th:nth-child(4), #positionsTable td:nth-child(4) {
+    text-align: right;
+}
+
+#positionsTable th:nth-child(1), #positionsTable td:nth-child(1), #positionsTable th:nth-child(2), #positionsTable td:nth-child(2) {
+    text-align: left;
 }

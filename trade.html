@@ -17,9 +17,9 @@
                 <h1 class="navlogo">Tully</h1>
                 <ul class="navlist">
                     <li><a href='index.html'>Home</a></li>
-                    <li><a href='#'>Master</a></li>
+                    <li><a href='master.html'>Master</a></li>
                     <li><a href='#'>Trade</a></li>
-                    <li><a href='#'>Manage</a></li>
+                    <li><a href='manage.html'>Manage</a></li>
                 </ul>
             </div>
         </header>
@@ -31,47 +31,124 @@
                         <div class="firstTwo">
                             <div class="accountSection">
                                 <h2 class="accountList">Accounts</h2>
+                                <div class="table-container">
+                                    <table id="accountTable">
+                                        <thead id="acc-thead">
+                                            <tr>
+                                                <th>Code</th>
+                                                <th class="right">Name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="acc-tbody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="securitiesSection">
                                 <h2 class="securitiesList">Securities</h2>
+                                <div class="table-container">
+                                    <table id="securitiesTable">
+                                        <thead id="sec-thead">
+                                            <tr>
+                                                <th class="center">Code</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sec-tbody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                         <h1 class="buy-order">Create Buy Order</h1>
                         <div class="buyOrderFirst">
                             <div class="accSel">
-                                <p class="accountSelect">Account</p>
-                                <select name="account-select" class="chooseAccount">
+                                <p class="form-para">Account</p>
+                                <select name="account-select" class="choose" id="accountSelector">
                                     <option>None</option>
                                 </select>
                             </div>
                             <div class="stockSel">
-                                <p class="stockSelect">Stock Code</p>
-                                <select name="stock-select" class="chooseStock">
+                                <p class="form-para">Stock Code</p>
+                                <select name="stock-select" class="choose" id="stockSelector">
                                     <option>None</option>
                                 </select>
                             </div>
                         </div>
                         <div class="buyOrderSecond">
                             <div class="quantitySel">
-                                <p class="quantitySelect">Quantity</p>
-                                <input name="quantity-select" class="chooseQuantity" type='text' placeholder="Enter Quantity" />
+                                <p class="form-para">Quantity</p>
+                                <input name="quantity-select" class="form-input" type='text' placeholder="Enter Quantity" id="quantityInput"/>
                             </div>
                             <div class="priceSel">
-                                <p class="priceSelect">Price</p>
-                                <input name="price-select" class="choosePrice" type="text" placeholder="Enter Price" />
-                            </div>
-                            <div class="dateSel">
-                                <p class="dateSelect">Date</p>
-                                <p id="show-date"></p>
+                                <p class="form-para">Price</p>
+                                <input name="price-select" class="form-input" type="text" placeholder="Enter Price" id="priceInput"/>
                             </div>
                         </div>
+                        <div class="dateSel">
+                            <p class="form-para">Date</p>
+                            <input name="price-select" type="text" placeholder="Enter Date" id="DateSelector"/>
+                        </div>
                         <div class="buyOrderThird">
+                            <p class="successPara">Buy Order Created &#10003;</p>
                             <button class="addBuyOrderButton">Buy</button>
                         </div>
                     </div>
                     <div class="sellSection">
-                        <div class="stocksSection"></div>
+                        <div class="stocksSection">
+                            <div class="firstBox">
+                                <h2 class="positionsList">Current Positions</h2>
+                                <div class="table-container">
+                                    <table id="positionsTable">
+                                        <thead id="pos-thead">
+                                            <tr>
+                                                <th>Account</th>
+                                                <th>Stock</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="pos-tbody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                         <h1 class="sell-order">Create Sell Order</h1>
+                        <div class="sellOrderFirst">
+                            <div class="accSel">
+                                <p class="accountSelect">Account</p>
+                                <select name="account-select" class="choose" id="sellAccountSelector">
+                                    <option>None</option>
+                                </select>
+                            </div>
+                            <div class="stockSel">
+                                <p class="stockSelect">Stock Code</p>
+                                <select name="stock-select" class="choose" id="sellStockSelector">
+                                    <option>None</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sellOrderSecond">
+                            <div class="quantitySel">
+                                <p class="quantitySelect">Quantity</p>
+                                <input name="quantity-select" class="form-input" type='text' placeholder="Enter Quantity" id="sellQuantitySelector"/>
+                            </div>
+                            <div class="priceSel">
+                                <p class="priceSelect">Price</p>
+                                <input name="price-select" class="form-input" type="text" placeholder="Enter Price" id="sellPriceSelector"/>
+                            </div>
+                        </div>
+                        <div class="dateSel">
+                            <p class="dateSelect">Date</p>
+                            <input name="price-select" type="text" placeholder="Enter Date" id="sellDateSelector"/>
+                        </div>
+                        <div class="sellOrderThird">
+                            <p class="failPara">Sell Order Executed &#10003;</p>
+                            <button class="sellOrderButton">Sell</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,5 +163,15 @@
                 </div>
             </div>
         </footer>
+        <div class="modal" id="FailModal">
+            <div class="modal-content">
+                <div class="divicon">
+                    <i class="fa-solid fa-xmark close" id="modal-closer"></i>
+                </div>
+                <div class="wrong-image"></div>
+                <p class="modal-para"></p>
+            </div>
+        </div>
+        <script src="trade.js"></script>
     </body>
 </html>
