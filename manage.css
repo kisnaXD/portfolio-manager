@@ -1,0 +1,61 @@
+.main-section {
+    width: 100%;
+    height: auto;
+    background-color: #CAD2C5;
+    font-family: "Inter";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-heading {
+    margin: 4rem 0;
+}
+
+.main-table-holder {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 82%;
+    height: auto;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+#table-columns {
+    padding: 1.2rem;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+#table-rows {
+    padding: 1.2rem;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+#myTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+#myTable th:nth-child(3), #myTable td:nth-child(3), #myTable th:nth-child(4), #myTable td:nth-child(4), #myTable th:nth-child(5), #myTable td:nth-child(5) {
+    text-align: right;
+    padding: 0.6rem 0;
+}
+
+#myTable th:nth-child(1), #myTable td:nth-child(1), #myTable th:nth-child(2), #myTable td:nth-child(2) {
+    text-align: left;
+    padding: 0.6rem 0;
+}
+
+.table-container {
+    width: 100%;
+    overflow-y: auto;
+}

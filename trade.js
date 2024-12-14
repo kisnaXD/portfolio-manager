@@ -66,6 +66,9 @@ function refreshPositions() {
             const stockOption = document.createElement('option');
             
             let selectBoxStock = document.getElementById("sellStockSelector");
+            selectBoxStock.innerHtML = ''
+            const noneOption = document.createElement('option');
+            noneOption.innerText = 'None';
 
             accountCell.textContent = code;
             stockCell.textContent = positionData[code][indexa]['stock'];
@@ -75,6 +78,7 @@ function refreshPositions() {
 
             
             selectBoxStock.append(stockOption);
+            selectBoxStock.append(noneOption);
             row.append(accountCell);
             row.append(stockCell);
             row.append(quantityCell);
@@ -164,8 +168,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 localStorage.setItem('position', JSON.stringify(currentStocks));
-                refreshPositions();
             }
+            let portfolioDetails = JSON.parse(localStorage.getItem('portfolio'));
+            console.log(portfolioDetails)
+            if(portfolioDetails === null) {
+                let newDetails = {
+                    [selectBoxAccount.value]: {
+                        [selectBoxStock.value]: {
+                            price: inputPrice.value,
+                            quantity: inputQuantity.value,
+                        },
+                    },
+                };
+                console.log(JSON.stringify(newDetails));
+                localStorage.setItem('portfolio', JSON.stringify(newDetails));
+            } else {
+                const accDetails = portfolioDetails[selectBoxAccount.value];
+                let f = 0
+                for(const stock in accDetails) {
+                    if(selectBoxStock.value === stock) {
+                        f = 0
+                        break;
+                    } else {
+                        f = 1;
+                        continue;
+                    }
+                }
+                if(f===0) {
+                    console.log(portfolioDetails)
+                    const stockDetails = accDetails[selectBoxStock.value];
+                    const newPrice = (Number(stockDetails['price'])*Number(stockDetails['quantity']) + Number(inputPrice.value)*Number(inputQuantity.value))/(Number(stockDetails['quantity']) + Number(inputQuantity.value));
+                    const newQuantity = Number(inputQuantity.value) + Number(stockDetails['quantity']);
+                    portfolioDetails[selectBoxAccount.value][selectBoxStock.value]['price'] = newPrice;
+                    portfolioDetails[selectBoxAccount.value][selectBoxStock.value]['quantity'] = newQuantity;
+                    localStorage.setItem('portfolio', JSON.stringify(portfolioDetails));
+                } else if(f===1) {
+                    console.log(portfolioDetails)
+                    portfolioDetails[selectBoxAccount.value][selectBoxStock.value] = {
+                        price: inputPrice.value,
+                        quantity: inputQuantity.value,
+                    };
+                    localStorage.setItem('portfolio', JSON.stringify(portfolioDetails));
+                }
+            }
+            refreshPositions();
         }
     });
 
@@ -209,20 +255,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let modalPara = document.querySelector('.modal-para');
             modalPara.innerText = "Price cannot be Empty";
         } else {
-            const currentStocks = JSON.parse(localStorage.getItem('position'));
+            const currentStocks = JSON.parse(localStorage.getItem('portfolio'));
+            console.log(selectBoxAccount.value);
             const accountStocks = currentStocks[selectBoxAccount.value];
-            console.log(accountStocks);
-            let sum = 0
-            for(const code in accountStocks) {
-                console.log(code);  
-                if(code === "length") {
-                    break;
-                }
-                if(accountStocks[code]['stock'] === selectBoxStock.value){
-                    sum+=Number(accountStocks[code]['quantity']);
-                }
-                console.log(sum);
-            }
+            console.log(accountStocks)
+            console.log(accountStocks[selectBoxStock.value]);
+            let sum = Number(accountStocks[selectBoxStock.value]['quantity']);
             if(sum===0) {
                 modal.style.display = 'block';
                 document.body.classList.add("modal-open");
@@ -274,6 +312,44 @@ document.addEventListener("DOMContentLoaded", function () {
                         localStorage.setItem('sellOrders', JSON.stringify(sellOrders));
                     }
                 }
+                let portfolioDetails = JSON.parse(localStorage.getItem('portfolio'));
+                let positionDetails = JSON.parse(localStorage.getItem('position'));
+                let accountPositions = positionDetails[selectBoxAccount.value];
+                let remaining = Number(inputQuantity.value);
+                let price = 0;
+                let arr = [];
+                for(const stock in accountPositions) {
+                    if(stock === 'length') {
+                        break;
+                    }
+                    if (accountPositions[stock]['quantity'] < remaining && accountPositions[stock]['stock'] === selectBoxStock.value) {
+                        arr.push(stock);
+                        remaining = remaining - Number(accountPositions[stock]['quantity']);
+                    } else if(accountPositions[stock]['quantity'] >= remaining && accountPositions[stock]['stock'] === selectBoxStock.value) {
+                        arr.push(stock);
+                        remaining = accountPositions[stock]['quantity'] - remaining; 
+                        price = remaining*Number(accountPositions[stock]['price']);   
+                    }
+                }
+                let sum1 = remaining;
+                let sum2 = price;
+                console.log(sum1);
+                console.log(sum2);
+                console.log(arr);
+                for(let i = Number(arr[arr.length-1])+1; i<accountPositions['length']; i++) {
+                    if(i === Number(accountPositions['length'])-1) {
+                        break;
+                    }
+                    if(accountPositions[i]['stock'] === selectBoxStock.value) {
+                        sum1 += Number(accountPositions[i]['quantity']);
+                        sum2 += Number(accountPositions[i]['quantity'])*Number(accountPositions[i]['price']);
+                    }
+                }
+                portfolioDetails[selectBoxAccount.value][selectBoxStock.value] = {
+                    price: sum2/sum1,
+                    quantity: sum1,
+                }
+                localStorage.setItem('portfolio', JSON.stringify(portfolioDetails));
             }
         }
     })
