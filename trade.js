@@ -67,8 +67,6 @@ function refreshPositions() {
             
             let selectBoxStock = document.getElementById("sellStockSelector");
             selectBoxStock.innerHtML = ''
-            const noneOption = document.createElement('option');
-            noneOption.innerText = 'None';
 
             accountCell.textContent = code;
             stockCell.textContent = positionData[code][indexa]['stock'];
@@ -78,7 +76,6 @@ function refreshPositions() {
 
             
             selectBoxStock.append(stockOption);
-            selectBoxStock.append(noneOption);
             row.append(accountCell);
             row.append(stockCell);
             row.append(quantityCell);
